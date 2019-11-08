@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}Our buklet{% endblock %}
+
+
+{% block content %}
+
+
+<!-- Content -->
+<div id="content" class="isotope-container">
+
+    <!-- Fluid container -->
+    <div class="container-fluid">
+
+        <!-- Page heading -->
+        <div id="heading" class="row">
+            <div class="col-12">
+
+                <header>
+                    <h1>Буклет інституту</h1>
+                    <h2>наш презентаційний буклет</h2>
+                </header>
+
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="row">
+            <div class="main-column col-12">
+
+                <!-- Inner -->
+                <div class="inner">
+
+                    <div class="row">
+                        <div class="col-12">
+
+                            <p>За посиланням нижче Ви зможете перегляну буклет нашого інституту:</p>
+                            {% for i in buklet %}
+                            <blockquote><p><a href="{{ i.buklet.url }}">Буклет{{ buklet.date_pub }}</a></p></blockquote>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+{% endblock %}

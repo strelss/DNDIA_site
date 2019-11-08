@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Posts with {{ tag.title }}{% endblock %}
+
+{% block content %}
+
+
+<!-- Content -->
+<div id="content" class="isotope-container">
+
+    <!-- Fluid container -->
+    <div class="container-fluid">
+
+        <!-- Page heading -->
+        <div id="heading" class="row">
+            <div class="col-12">
+
+                <header>
+                    <h1>Cуспільне життя під тегом #{{ tag.title }}</h1>
+                    <h2>що є із тегом #{{ tag.title }}</h2></header>
+
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="row sidebar-right">
+            <div class="main-column col-9">
+
+                <!-- Masonry blog -->
+                <div class="masonry masonry-1 row">
+
+                    {% for post in tag.posts.all %}
+                    <article
+                            class="post type-post status-publish format-standard has-post-thumbnail hentry category-europe category-park tag-europe tag-park tag-relaxing tag-sticky tag-strolling tag-walk blog col-12">
+                        <div class="image" style="background-image: url({{ post.img1.url }})"></div>
+                        <div class="inner">
+                            <i title="Sticky Post" class="sticky-icon fa fa-thumb-tack"></i>
+                            <header>
+                                <h3><a href="#" rel="bookmark">{{ post.title }}</a></h3>
+                                <div class="vcard">
+                                    <div class="date">On
+                                        <time datetime="2014-04-17">{{ post.date_pub }}</time>
+                                    </div>
+                                </div>
+                            </header>
+                            <p>{{ post.body}}</p>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+{% endblock %}

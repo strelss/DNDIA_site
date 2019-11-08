@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Our command{% endblock %}
+
+{% block content %}
+
+    <!-- Content -->
+		<div id="content" class="isotope-container">
+
+			<!-- Fluid container -->
+			<div class="container-fluid">
+
+				<!-- Page heading -->
+				<div id="heading" class="row">
+					<div class="col-12">
+
+						<header>
+							<h1>Командування</h1>
+							<h2>Хто нами керує</h2>
+                        </header>
+
+					</div>
+				</div>
+
+				<!-- Main content -->
+				<div class="row personal-profiles">
+
+                    <article class="personal-profile col-6"><div class="image" style="background-image: url({{ i.img_com.url }})"><div class="icons"><a href="#" class="fa fa-facebook"></a><a href="#" class="fa fa-twitter"></a><a href="#" class="fa fa-dribbble"></a></div></div><div class="inner"><header><h3 class="author fn">{{ i.mane_com }}</h3><h4>{{ i.milit_rank_com }}</h4></header><p>{{ i.post_com }}</p></div></article>
+                    <article class="personal-profile col-6"><div class="image" style="background-image: url({{ i.img_polit.url }})"><div class="icons"><a href="#" class="fa fa-apple"></a><a href="#" class="fa fa-pinterest"></a><a href="#" class="fa fa-pagelines"></a></div></div><div class="inner"><header><h3 class="author fn">{{ i.mane_polit }}</h3><h4>{{ i.milit_rank_polit }}</h4></header><p>{{ i.post_polit }}</p></div></article>
+                    <article class="personal-profile col-6"><div class="image" style="background-image: url({{ i.img_first.url }})"><div class="icons"><a href="#" class="fa fa-envelope-o"></a><a href="#" class="fa fa-flickr"></a><a href="#" class="fa fa-windows"></a></div></div><div class="inner"><header><h3 class="author fn">{{ i.mane_first }}</h3><h4>{{ i.milit_rank_first }}</h4></header><p>{{ i.post_first }}</p></div></article>
+                    <article class="personal-profile col-6"><div class="image" style="background-image: url({{ i.img_scintific.url }})"><div class="icons"><a href="#" class="fa fa-skype"></a><a href="#" class="fa fa-google-plus"></a><a href="#" class="fa fa-github"></a></div></div><div class="inner"><header><h3 class="author fn">{{ i.mane_scintific }}</h3><h4>{{ i.milit_scintific }}</h4></header><p>{{ i.post_scintific }}</p></div></article>
+                    <article class="personal-profile col-6"><div class="image" style="background-image: url({{ i.img_nov.url }})"><div class="icons"><a href="#" class="fa fa-facebook"></a><a href="#" class="fa fa-twitter"></a><a href="#" class="fa fa-dribbble"></a></div></div><div class="inner"><header><h3 class="author fn">{{ i.mane_nov }}</h3><h4>{{ i.milit_rank_nov }}</h4></header><p>{{ i.post_nov }}</p></div></article>
+                    <article class="personal-profile col-6"><div class="image" style="background-image: url({{ i.img_ndu1.url }})"><div class="icons"><a href="#" class="fa fa-apple"></a><a href="#" class="fa fa-pinterest"></a><a href="#" class="fa fa-pagelines"></a></div></div><div class="inner"><header><h3 class="author fn">{{ i.mane_ndu1 }}</h3><h4>{{ i.milit_rank_ndu1 }}</h4></header><p>{{ i.post_ndu1 }}</p></div></article>
+                    <article class="personal-profile col-6"><div class="image" style="background-image: url({{ i.img_ndu2.url }})"><div class="icons"><a href="#" class="fa fa-envelope-o"></a><a href="#" class="fa fa-flickr"></a><a href="#" class="fa fa-windows"></a></div></div><div class="inner"><header><h3 class="author fn">{{ i.mane_ndu2 }}</h3><h4>{{ i.milit_rank_ndu2 }}</h4></header><p>{{ i.post_ndu2 }}</p></div></article>
+                    <article class="personal-profile col-6"><div class="image" style="background-image: url({{ i.img_otd01.url }})"><div class="icons"><a href="#" class="fa fa-skype"></a><a href="#" class="fa fa-google-plus"></a><a href="#" class="fa fa-github"></a></div></div><div class="inner"><header><h3 class="author fn">{{ i.mane_otd01 }}</h3><h4>{{ i.milit_rank_otd01 }}</h4></header><p>{{ i.post_otd01 }}</p></div></article>
+
+                </div>
+
+
+			</div>
+
+		</div>
+
+{% endblock %}

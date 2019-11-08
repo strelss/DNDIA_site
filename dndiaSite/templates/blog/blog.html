@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block title %}Our events social life{% endblock %}
+
+{% block content %}
+
+
+<!-- Content -->
+<div id="content" class="isotope-container">
+
+    <!-- Fluid container -->
+    <div class="container-fluid">
+
+        <!-- Page heading -->
+        <div id="heading" class="row">
+            <div class="col-12">
+
+                <header>
+                    <h1>Cуспільне життя</h1>
+                    <h2>що в нас нового</h2></header>
+
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="row sidebar-right">
+            <div class="main-column col-9">
+
+                <!-- Masonry blog -->
+                <div class="masonry masonry-1 row">
+
+                    {% for post in posts.object_list %}
+                    <article
+                            class="post type-post status-publish format-standard has-post-thumbnail hentry category-europe category-park tag-europe tag-park tag-relaxing tag-sticky tag-strolling tag-walk blog col-12">
+                        <div class="image" style="background-image: url({{ post.img1.url }})"></div>
+                        <div class="inner">
+                            <i title="Sticky Post" class="sticky-icon fa fa-thumb-tack"></i>
+                            <header>
+                                <h3><a href="#" rel="bookmark">{{ post.title }}</a></h3>
+                                <div class="vcard">
+                                    <div class="date">On
+                                        <time datetime="2014-04-17">{{ post.date_pub }}</time>
+                                    </div>
+                                </div>
+                            </header>
+                            <p>{{ post.body|truncatewords:15 }}</p>
+                            <p><a href="{% url 'blog:post_detail_url' slug=post.slug %}" class="more-link">Дізнатися
+                                більше</a></p>
+                        </div>
+                        <div class="panel-footer text-muted ">
+                            Теги:
+                            {% for tag in post.tags.all %}
+                            <a href="{% url 'blog:post_detail_url' slug=post.slug %}"> #{{ tag.title }}</a>
+                            {% endfor %}
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+                {% if is_paginated %}
+                    <div class="pagination-row row">
+                        <div class="col-12">
+                            <div class="pag">
+                                <a class="previous page-numbers" {% if not prev_url %}style="display: none" {% endif %}
+                                   href="{{ prev_url }}">Попереднє</a>
+                                {% for n in posts.paginator.page_range %}
+                                    {% if posts.number == n %}
+                                        <span class='page-numbers current'>{{ n }}</span>
+                                    {% elif n > posts.number|add:-3 and n < posts.number|add:3 %}
+                                        <a class='page-numbers' href='?page={{ n }}'>{{ n }}</a>
+                                    {% endif %}
+                                {% endfor %}
+                                <a class="next page-numbers" {% if not next_url %}style="display: none" {% endif %}
+                                   href="{{ next_url }}">Наступне</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="sidebar-column col-3">
+
+                <aside id="search-2" class="widget widget_search inner">
+                    <form role="search" method="get" id="searchform" action="{% url 'blog:blog' %}">
+                        <div class="input-group">
+                            <input type="text" name="search" id="s" class="form-control" value=""
+                                   placeholder="Search here...">
+                            <span class="input-group-btn">
+			<button type="submit" class="btn btn-color btn-icon-only"><i
+                    class="glyphicon glyphicon-search"></i></button>
+		</span>
+                        </div>
+                    </form>
+                </aside>
+                <aside id="recent-posts-2" class="widget widget_recent_entries inner"><h4>Пошук за тегами</h4>
+                    <ul>
+                        {% for tag in tags %}
+                        <li>
+                            <a href="{% url 'blog:tag_detail_url' slug=tag.slug %}">#{{ tag.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </aside>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

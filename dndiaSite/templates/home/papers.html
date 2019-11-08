@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %} Our papers {% endblock %}
+
+{% block content %}
+
+
+<!-- Content -->
+<div id="content" class="isotope-container">
+
+    <!-- Fluid container -->
+    <div class="container-fluid">
+
+        <!-- Page heading -->
+        <div id="heading" class="row">
+            <div class="col-12">
+
+                <header>
+                    <h1>Збірник наукових праць</h1>
+                    <h2>що ми публікуємо</h2>
+                </header>
+
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="row">
+            <div class="main-column col-12">
+
+                <!-- Inner -->
+                <div class="inner">
+
+                    <div class="row">
+                        <div class="col-12">
+
+                            <p>Тут ви зможете переглянути нащі збірники наукових праць, які представлені нижче по датам публікацій:</p>
+                            {% for paper in papers %}
+                            <blockquote><p><a href="{{ paper.papers.url }}">Збірник науквоих праць, завантажено {{ paper.date_pub }}</a></p></blockquote>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,151 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+
+<!-- Meta -->
+<meta charset="UTF-8">
+<title>{% block title %}DNDIA{% endblock %}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="">
+<meta name="description" content="">
+
+<!-- Favicons -->
+	<link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+	<link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/apple-touch-icon-72x72.png' %}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/apple-touch-icon-114x114.png' %}">
+	<link rel="apple-touch-icon" sizes="144x144" href="{% static 'img/apple-touch-icon-144-144.png' %}">
+
+<link rel='stylesheet' id='main-css'  href="{% static 'css/style.css' %}" type='text/css' media='all' />
+<link rel='stylesheet' id='reset-css'  href="{% static 'css/reset.css' %}" type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css'  href="{% static 'css/bootstrap.min.css' %}" type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href="{% static 'css/font-awesome.min.css' %}" type='text/css' media='all' />
+<link rel='stylesheet' id='swiper-css'  href="{% static 'css/idangerous.swiper.css' %}" type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href="{% static 'css/style.css' %}" type='text/css' media='all' />
+<script type='text/javascript' src="{% static 'js/jquery.js' %}"></script>
+<script type='text/javascript' src="{% static 'js/jquery-migrate.min.js' %}"></script>
+
+
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<link href='http://fonts.googleapis.com/css?family=Comfortaa:400,700,300|Ubuntu:400,700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+</head>
+
+<body class="home page page-template page-template-template-homepage page-template-template-homepage-php menu-left menu-collapsible">
+
+	<!-- Preloader -->
+	<div id="preloader">
+		<div id="status">
+			<div class="windows8">
+				<div class="wBall" id="wBall_1">
+					<div class="wInnerBall"></div>
+				</div>
+				<div class="wBall" id="wBall_2">
+					<div class="wInnerBall"></div>
+				</div>
+				<div class="wBall" id="wBall_3">
+					<div class="wInnerBall"></div>
+				</div>
+				<div class="wBall" id="wBall_4">
+					<div class="wInnerBall"></div>
+				</div>
+				<div class="wBall" id="wBall_5">
+					<div class="wInnerBall"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Overlay -->
+	<div id="overlay"></div>
+
+	<!-- Top header -->
+	<div id="top">
+
+		<!-- Sidebar button -->
+		<a href="#" id="sidebar-button"></a>
+
+		<!-- Logo -->
+		<header id="logo"><a href="{% url 'home:index' %}"><img src="{% static 'img/logo.png' %}" alt=""></a></header>
+
+		<!-- Fullscreen slider navigation arrows -->
+		<nav id="nav-arrows">
+			<a href="#" class="nav-left hidden"></a>
+			<a href="#" class="nav-right"></a>
+		</nav>
+
+	</div>
+
+	<!-- Main wrapper -->
+	<div id="main-wrapper">
+
+
+        <!-- CONTENT IN HERE -->
+
+            {% block content %}{% endblock %}
+
+
+
+    <!--</div>-->
+
+
+
+    <!-- Collapsible sidebar -->
+		<div id="sidebar">
+
+			<!-- Widget Area -->
+			<div id="widgets">
+
+				<!-- Main menu -->
+				<nav id="mainmenu">
+
+					<ul id="menu-rayleigh-main-menu" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home current-menu-item current_page_item"><a href="{% url 'home:index' %}">Головна</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#">Про нас</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url 'about:history' %}">Історична довідка</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url 'about:team' %}">Командування</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url 'about:activity' %}">Напрямки діяльності</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url 'send_massage:contacts' %}">Контакти</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#">Наші досягнення</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url 'progress:work' %}">Діяльність</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url 'progress:scienpot' %}">Науковий потенціал</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url 'progress:matbase' %}">Матеріальна база</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url 'home:partners' %}">Співробітництво</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url 'home:papers' %}">Збірник наукових праць</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="{% url 'blog:blog' %}">Суспільне життя</a>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url 'home:buklet' %}">Буклет інституту</a></li>
+
+</ul>
+				</nav>
+
+			</div>
+
+			<!-- Copyright -->
+			<footer>
+				<p class="copyright"><span>© Державний НДІ авіації 2005-2020</span></p>
+			</footer>
+
+		</div>
+
+    </div>
+
+    <script type='text/javascript' src="{% static 'js/jquery.form.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/scripts.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/idangerous.swiper.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/masonry.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/jquery.isotope.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/custom.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/comment-reply.min.js' %}"></script>
+
+</body>
+
+</html>

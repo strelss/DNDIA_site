@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Our services{% endblock %}
+
+{% block content %}
+
+<!-- Content -->
+		<div id="content">
+
+			<!-- Fluid container -->
+			<div class="container-fluid">
+
+				<!-- Page heading -->
+				<div id="heading" class="row">
+					<div class="col-12">
+
+						<header>
+							<h1>Напрямки діяльностя</h1>
+							<h2>Що ми пропонуємо</h2>
+                        </header>
+
+					</div>
+				</div>
+
+				<!-- Main content -->
+				<div class="row services">
+
+<article class="service-box col-12"><div class="image" style="background-image: url({% static 'img/ias.jpg' %}); background-repeat: no-repeat; background-size: auto; background-position: center; display: inline-block;"></div><div class="inner"><header><h3>{{ i.name_ias }}</h3></header><p>{{ i.text_ias }}.</p></div></article>
+<article class="service-box col-12"><div class="image" style="background-image: url({% static 'img/exp.jpg' %}); background-repeat: no-repeat; background-size: auto; background-position: center; display: inline-block;"></div><div class="inner"><header><h3>{{ i.name_expluat }}</h3></header><p>{{ i.text_expluat }}</p></div></article>
+<article class="service-box col-12"><div class="image" style="background-image: url({% static 'img/pnp.jpg' %}); background-repeat: no-repeat; background-size: auto; background-position: center; display: inline-block;"></div><div class="inner"><header><h3>{{ i.name_pnp }}</h3></header><p>{{ i.text_pnp }}</p></div></article>
+<article class="service-box col-12"><div class="image" style="background-image: url({% static 'img/rem.jpg' %}); background-repeat: no-repeat; background-size: auto; background-position: center; display: inline-block;"></div><div class="inner"><header><h3>{{ i.name_rem }}</h3></header><p>{{ i.text_rem }}</p></div></article>
+<article class="service-box col-12"><div class="image" style="background-image: url({% static 'img/mod.jpg' %}); background-repeat: no-repeat; background-size: auto; background-position: center; display: inline-block;"></div><div class="inner"><header><h3>{{ i.name_mod }}</h3></header><p>{{ i.text_mod }}</p></div></article>
+
+				</div>
+
+			</div>
+
+		</div>
+
+{% endblock %}

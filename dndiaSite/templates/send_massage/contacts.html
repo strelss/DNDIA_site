@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+
+{% block title %}Contacts{% endblock %}
+
+{% block content %}
+
+<!--<section class="probootstrap-section">-->
+    <!--<div class="container">-->
+      <!--<div class="row">-->
+        <!--<div class="col-md-6 col-md-offset-3 mb80 text-center probootstrap-animate">-->
+          <!--<h2>Contact Me</h2>-->
+          <!--<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="row">-->
+        <!--<div class="col-md-8 probootstrap-animate">-->
+          <!--<form action="{% url 'send_massage:send' %}" method="post" class="probootstrap-form mb60">-->
+                <!--{% csrf_token %}-->
+            <!--<div class="row">-->
+              <!--<div class="col-md-6">-->
+                <!--<div class="form-group">-->
+                  <!--<label for="fname">First Name</label>-->
+                  <!--<input type="text" class="form-control" id="fname" name="fname">-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="col-md-6">-->
+                <!--<div class="form-group">-->
+                  <!--<label for="lname">Last Name</label>-->
+                  <!--<input type="text" class="form-control" id="lname" name="lname">-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+              <!--<label for="email">Email</label>-->
+              <!--<input type="email" class="form-control" id="email" name="email">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+              <!--<label for="message">Message</label>-->
+              <!--<textarea cols="30" rows="10" class="form-control" id="message" name="message"></textarea>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+              <!--<input type="submit" class="btn btn-primary" id="submit" name="submit" value="Send Message">-->
+            <!--</div>-->
+          <!--</form>-->
+        <!--</div>-->
+        <!--<div class="col-md-3 col-md-push-1 probootstrap-animate">-->
+          <!--<h4>Contact Details</h4>-->
+          <!--<ul class="with-icon colored">-->
+            <!--<li><i class="icon-location2"></i> <span>198 West 21th Street, Suite 721 New York NY 10016</span></li>-->
+            <!--<li><i class="icon-mail"></i><span>info@domain.com</span></li>-->
+            <!--<li><i class="icon-phone2"></i><span>+123 456 7890</span></li>-->
+          <!--</ul>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</section>-->
+  <!--<div class="container probootstrap-animate">-->
+    <!--<div id="map"></div>-->
+  <!--</div>-->
+
+
+
+
+<!-- Content -->
+<div id="content" class="isotope-container">
+
+    <!-- Fluid container -->
+    <div class="container-fluid">
+
+        <!-- Page heading -->
+        <div id="heading" class="row">
+            <div class="col-12">
+
+                <header>
+                    <h1>Контакти</h1>
+                    <h2>Як з нами зв'язатись та як нас знайти</h2>
+                </header>
+
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="row">
+            <div class="main-column contact-page col-12">
+
+                <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1068.100028499979!2d30.47923523885415!3d50.452567937594814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce87b69199f1%3A0x2651bf595b24bf1f!2z0LLRg9C70LjRhtGPINCT0YDQuNCz0L7RgNGW0Y8g0JDQvdC00YDRjtGJ0LXQvdC60LAsIDYsINCa0LjRl9CyLCAwMjAwMA!5e0!3m2!1suk!2sua!4v1572852750269!5m2!1suk!2sua"
+                        style="border: 1px solid black"></iframe>
+                <!-- Inner -->
+                <div class="inner">
+
+                    <div class="row">
+                        <div class="col-12">
+
+                            <div class="row">
+                                <div class="col-9">
+                                    <h3>Напишіть нам</h3>
+                                    <p>Надішліть нам листа, опишіть Ваш запит. Ми обов'язково його прочитаємо та надамо
+                                        Вам відповіді на всі Ващі запитання в найкородщі строки. <br/>Будь ласка,
+                                        заповніть форму нижче.</p>
+                                    <hr/>
+                                    <p>
+                                        <div id="wpcf7-f4-p80-o1">
+                                            <div class="screen-reader-response"></div>
+                                            <form action="{% url 'send_massage:send' %}" method="POST" class="wpcf7-form">
+                                                {% csrf_token %}
+
+                                    <p>Ваше ім'я (обов'язково)<br/>
+                                        <label for="fname" style="width:100%" class="wpcf7-form-control-wrap your-name">
+
+                                            <input
+                                                type="text" name="fname" value="" size="40"
+                                                class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                                aria-required="true" aria-invalid="false"/></label>
+                                                </p>
+                                    <p>Ваша електронна адреса (обов'язково)<br/>
+                                        <label for="email" style="width:100%"
+                                               class="wpcf7-form-control-wrap your-email">
+
+                                            <input type="email"
+                                                                                                 name="email"
+                                                                                                 value="" size="40"
+                                                                                                 class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
+                                                                                                 aria-required="true"
+                                                                                                 aria-invalid="false"/></label>
+                                    </p>
+                                    <p>Назва Вашої організації<br/>
+                                        <label for="orgname" style="width:100%"
+                                               class="wpcf7-form-control-wrap your-subject">
+
+                                            <input type="text"
+                                                                                                   name="orgname"
+                                                                                                   value="" size="40"
+                                                                                                   class="wpcf7-form-control wpcf7-text"
+                                                                                                   aria-invalid="false"/></label>
+                                    </p>
+                                    <p>Ваше повідомлення<br/>
+                                        <label for="message" style="width:100%"
+                                               class="wpcf7-form-control-wrap your-message">
+
+                                            <textarea
+                                                name="message" cols="40" rows="10"
+                                                class="wpcf7-form-control wpcf7-textarea"
+                                                aria-invalid="false"></textarea></label></p>
+                                    <p><input type="submit" id="submit" name="submit" value="Надіслати листа"
+                                              class="btn btn-primary"/></p>
+                                    <div class="wpcf7-response-output wpcf7-display-none"></div>
+                                    </form>
+                                </div>
+                                </p>
+                            </div>
+                            <div class="col-3">
+                                <h3>Наша адреса</h3>
+                                <div class="icon-text"><i class="fa fa-map-marker"></i>
+                                    <p>вул. Григорія Андрющенка 6, м.Київ, 01135, Україна</p></div>
+                                <div class="icon-text"><i class="fa fa-phone"></i>
+                                    <p>+38(044)-236-60-13</p></div>
+                                <div class="icon-text"><i class="fa fa-phone"></i>
+                                    <p>+38(044)-503-81-59</p></div>
+                                <div class="icon-text"><i class="fa fa-envelope-o"></i>
+                                    <p><a title="Our email address"
+                                          href="mailto:eric@bayguzin.ru">dndia@dndia.edu.ua</a></p></div>
+                                <div class="icon-text"><i class="fa fa-envelope-o"></i>
+                                    <p><a title="Our email address" href="mailto:eric@bayguzin.ru">dndia@ukr.net</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+{% endblock %}
